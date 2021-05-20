@@ -17,5 +17,6 @@ background-color: burlywood;
     height: 580px;
     box-shadow: 5px 5px 5px #888;
     border: 4px solid black;
+    cursor: pointer;
     
     }

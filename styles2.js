@@ -17,9 +17,34 @@ L.control.scale().addTo(map);
 
 // Añadiendo un marcador
 // L.marker([41.3868561,2.1661102],{draggable: true}).addTo(map);
-
-
 //MARCADOR contenido
-// var marker = L.marker([41.3868561,2.1661102]).addTo(map);
-// marker.bindPopup("<b>Restaurant Centfocs</b><br>Restaurante mediterráneo.<br>Carrer de balmes, 16, 08007 Barcelona").openPopup();
+var marker = L.marker([41.3868561,2.1661102]).addTo(map);
+marker.bindPopup("<b>Restaurant Centfocs</b><br>Restaurante mediterráneo.<br>Carrer de balmes, 16, 08007 Barcelona").openPopup();
 
+
+// Alert
+// function onMapClick(e) {
+    //     alert("You clicked the map at " + e.latlng);
+    // }
+    
+    // map.on('click', onMapClick);
+    
+    // Popup
+    var popup = L.popup();
+    
+    function onMapClick(e) {
+        marker.remove(map);
+        popup
+        .setLatLng(e.latlng)
+        .setContent("Mis coordenadas son: <br>" + e.latlng.toString())
+        .openOn(map);
+        
+        
+        // var marker = L.marker([e.latlng]).addTo(map);
+        // marker.addTo(map);
+        
+        
+        
+}
+
+map.on('click', onMapClick);
