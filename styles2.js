@@ -9,7 +9,7 @@ setView([41.3870154, 2.1700471],
     // Añadiendo las capas de OpenStreetMap
 L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
-    maxZoom: 18
+    maxZoom: 18,
 }).addTo(map);
 
 // Añadiendo un control de escala
@@ -32,16 +32,21 @@ marker.bindPopup("<b>Restaurant Centfocs</b><br>Restaurante mediterráneo.<br>Ca
     // Popup
     var popup = L.popup();
     
+    
     function onMapClick(e) {
         marker.remove(map);
+
+        // var marcador=L.marker(e);
+        
         popup
         .setLatLng(e.latlng)
         .setContent("Mis coordenadas son: <br>" + e.latlng.toString())
         .openOn(map);
+
+
+        console.log(e.latlng.toString());
         
-        
-        // var marker = L.marker([e.latlng]).addTo(map);
-        // marker.addTo(map);
+   
         
         
         
